@@ -65,7 +65,7 @@ const message = document.createElement("div");
 message.classList.add("cookie-message");
 
 message.innerHTML =
-  "Welcome to Galactic Credits Union! Just like every planet has its own unique flavor, we use cookies to enhance your browsing experience and make banking with us even more convenient. By using our app, you consent to our use of cookies. To learn more, please read our Cookie Policy. <button class='btn btn--close-cookie'>Got it!</button>";
+  "Galactic Credits Union uses cookies to improve your banking experience. <button class='btn btn--close-cookie'>Got it!</button>";
 
 // header.prepend(message);
 header.append(message);
@@ -80,3 +80,24 @@ document
     // message.remove();
     message.parentElement.removeChild(message);
   });
+
+/////
+
+// 187. styles, attributes and classes
+
+// styles
+message.style.backgroundColor = "#03045e";
+message.style.width = "120%";
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height) + 40 + "px";
+
+// attributes
+// standard
+const logo = document.querySelector(".nav__logo");
+console.log(logo.src);
+console.log(logo.alt);
+console.log(logo.className);
+
+// non-standard
+console.log(logo.getAttribute("designer"));
+console.log(logo.getAttribute("src"));
