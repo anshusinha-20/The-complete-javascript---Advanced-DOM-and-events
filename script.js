@@ -130,7 +130,11 @@ btnSrollTo.addEventListener("click", function (e) {
 // 189. types of events and event handlers
 
 const h1 = document.querySelector("h1");
-// will alert when mouse hovers over h1 element
-h1.addEventListener("mouseenter", function (e) {
+
+const alertH1 = (e) => {
   alert("You are reading the heading!");
-});
+};
+// will alert when mouse hovers over h1 element
+h1.addEventListener("mouseenter", alertH1);
+// removes the event listener
+h1.removeEventListener("mouseenter", alertH1);
