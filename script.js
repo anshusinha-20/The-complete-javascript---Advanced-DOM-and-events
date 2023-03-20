@@ -101,3 +101,26 @@ console.log(logo.className);
 // non-standard
 console.log(logo.getAttribute("designer"));
 console.log(logo.getAttribute("src"));
+
+/////
+
+// 188. implementing smooth scrolling
+const btnSrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
+
+btnSrollTo.addEventListener("click", function (e) {
+  const s1Coords = section1.getBoundingClientRect();
+  // get the details of the rectangular area into which
+  // the trigger button exists
+  // console.log(e.target.getBoundingClientRect());
+  // gets the current x and y position
+  // console.log("Current scroll: x, y", window.pageXOffset, window.pageYOffset);
+  // scrolling
+  // window.scrollTo({
+  //   left: s1Coords.left + window.pageXOffset,
+  //   top: s1Coords.top + window.pageYOffset,
+  //   behavior: "smooth",
+  // });
+  // more efficient way
+  section1.scrollIntoView({ behavior: "smooth" });
+});
